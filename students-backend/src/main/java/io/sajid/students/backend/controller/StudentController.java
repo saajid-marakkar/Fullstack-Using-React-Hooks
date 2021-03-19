@@ -1,19 +1,22 @@
 package io.sajid.students.backend.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.PutMapping;
 import io.sajid.students.backend.model.Student;
+import io.sajid.students.backend.repository.StudentRepository;
 import io.sajid.students.backend.service.StudentService;
 
 
@@ -24,6 +27,9 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService studentService;
+	
+	@Autowired
+	private StudentRepository studentRepository;
 	
 	//for handling post request for student details
 	@PostMapping("/send")
@@ -56,8 +62,40 @@ public class StudentController {
 	
 	// for handling get request for all the student details based name sorting order
 	@RequestMapping("/getAllByName")
-	public List<Student> getAllSorted(){
+	public List<Student> getAllSorted()
+	{
 		return studentService.getAllSorted();
 	}
 	
+	@RequestMapping("getById/{id}") 
+	public Student getStudent(@PathVariable String id)
+	{
+		return studentService.getStudent(id);
+	}
+	
+	@DeleteMapping("/{id}")
+	public String deleteStudentById(@PathVariable("id") String id)
+	{
+		return studentService.deleteStud(id);
+	}
+	
+	@DeleteMapping("/students/{id}")
+    public ResponseEntity<HttpStatus> deleteStudent(@PathVariable("id")String id)
+	{
+		return studentService.deleteStudent(id);
+    }
+	
+	@PutMapping("/editstudent")
+    public Student editStudent(@RequestBody Student newStudent) 
+	{
+		
+		return studentService.editStudent(newStudent);
+		
+		
+    }
+
 }
+
+
+	
+

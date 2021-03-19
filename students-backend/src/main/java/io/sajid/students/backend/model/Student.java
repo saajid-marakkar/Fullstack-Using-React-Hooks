@@ -22,7 +22,8 @@ public class Student { //class for student collection
 	int rollNumber;
 	
 	
-	public Student(String userName, String standard, String division, String gender, String dob, int rollNumber) {
+	public Student(String id, String userName, String standard, String division, String gender, String dob, int rollNumber) {
+		this.id = id;
 		this.userName = userName;
 		this.standard = standard;
 		this.division = division;
@@ -30,6 +31,14 @@ public class Student { //class for student collection
 		this.dob = dob;
 		this.rollNumber = rollNumber;
 		
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getUserName() {

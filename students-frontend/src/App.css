@@ -11,21 +11,25 @@
   padding-top: 5px;
 }
 .home{
-  background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
+  /* background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #22223f;
+  color: #f1b69b;
   height: 2000px;
   margin: 0px;
   top: 0;
   margin-top: 0px;
-  color: rgb(15, 15, 15);
+  
 }
 .students-page{
-  background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
+  /* background-image: url('https://images.hdqwalls.com/download/sea-of-clouds-below-mountains-5k-0s-2560x1024.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #22223f;
+  color: #f1b69b;
   height: 2000px;
   margin: 0px;
   top: 0;
